@@ -11,9 +11,12 @@ class SentenceParser:
     @staticmethod
     def _download_nltk_resources():
         """Скачивает необходимые ресурсы NLTK"""
-        # Todo: возможно сделать умную загрузку по необходимости
-        nltk.download('punkt')
-        nltk.download('punkt_tab')
+        required_resources = ['punkt', 'punkt_tab']
+        for resource in required_resources:
+            try:
+                nltk.data.find(f'tokenizers/{resource}')
+            except LookupError:
+                nltk.download(resource, quiet=True)
 
     def get_tokenize_sentence(self):
         """

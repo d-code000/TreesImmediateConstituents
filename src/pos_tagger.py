@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class POSTagger(ABC):
+class PosTagger(ABC):
     @abstractmethod
     def tag(self, word: str) -> str | None:
         """

@@ -5,7 +5,7 @@ description = "Add your description here"
 requires-python = ">=3.13"
 dependencies = [
     "nltk>=3.9.1",
-    "pymorphy2>=0.9.1",
+    "pymorphy3>=2.0.6",
 ]
 
 [dependency-groups]

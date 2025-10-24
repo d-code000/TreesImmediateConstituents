@@ -1,7 +1,7 @@
-from pos_tagger import POSTagger
+from pos_tagger import PosTagger
 
 
-class ManualPosTagger(POSTagger):
+class ManualPosTagger(PosTagger):
     def __init__(self, dictionary: dict[str, str]):
         """
         :param dictionary: Заранее определенный словарь

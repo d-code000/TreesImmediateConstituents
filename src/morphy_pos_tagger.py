@@ -1,11 +1,11 @@
-import pymorphy2
+import pymorphy3
 
-from pos_tagger import POSTagger
+from pos_tagger import PosTagger
 
 
-class MorphyPOSTagger(POSTagger):
+class MorphyPosTagger(PosTagger):
     def __init__(self):
-        self.morph = pymorphy2.MorphAnalyzer()
+        self.morph = pymorphy3.MorphAnalyzer()
 
     def tag(self, word: str) -> str | None:
         analysis = self.morph.parse(word)[0]

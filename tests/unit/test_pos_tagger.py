@@ -1,6 +1,6 @@
 import pytest
-from morphy_pos_tagger import MorphyPosTagger
-from manual_pos_tagger import ManualPosTagger
+from pos.morphy_pos_tagger import MorphyPosTagger
+from pos.manual_pos_tagger import ManualPosTagger
 
 @pytest.fixture(params=[
     MorphyPosTagger(),

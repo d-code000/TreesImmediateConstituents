@@ -8,17 +8,12 @@ class SentenceParser:
         self.text = text
         self._download_nltk_resources()
 
-    def _download_nltk_resources(self):
+    @staticmethod
+    def _download_nltk_resources():
         """Скачивает необходимые ресурсы NLTK"""
-        try:
-            nltk.data.find('tokenizers/punkt')
-        except LookupError:
-            nltk.download('punkt')
-
-        try:
-            nltk.data.find('tokenizers/punkt_tab')
-        except LookupError:
-            nltk.download('punkt_tab')
+        # Todo: возможно сделать умную загрузку по необходимости
+        nltk.download('punkt')
+        nltk.download('punkt_tab')
 
     def get_tokenize_sentence(self):
         """

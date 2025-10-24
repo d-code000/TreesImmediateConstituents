@@ -1,14 +1,18 @@
+import pytest
 from sentence_parser import SentenceParser
 
 
-def test_get_tokenize_sentence():
-    text = """
+@pytest.fixture
+def sample_text():
+    return """
     Большая собака быстро бежит по парку. 
     Маленький кот спит на диване! 
     Умный мальчик читает интересную книгу?
     """
 
-    parser = SentenceParser(text)
+
+def test_get_tokenize_sentence(sample_text):
+    parser = SentenceParser(sample_text)
     sentences = list(parser.get_tokenize_sentence())
 
     # Проверяем количество предложений

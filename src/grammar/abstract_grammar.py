@@ -50,6 +50,27 @@ class AbstractGrammar(ABC):
         """
         pass
 
+    def get_lexical_rules(self) -> str:
+        """
+        Возвращает лексические правила.
+        Может быть переопределён в наследниках для добавления специфичных правил.
+        """
+        return self._generate_lexical_rules()
+
+    def get_rules(self) -> str:
+        """
+        Возвращает полные правила грамматики
+        """
+        structural = self.get_structural_rules()
+        lexical = self.get_lexical_rules()
+        return structural + "\n" + lexical
+
+    def to_cfg(self) -> CFG:
+        """
+        Преобразует правила в объект CFG
+        """
+        return CFG.fromstring(self.get_rules())
+
     def _generate_lexical_rules(self) -> str:
         """
         Генерирует правила вида: N -> 'собака' | 'кот' | ...
@@ -67,17 +88,3 @@ class AbstractGrammar(ABC):
             rules.append(f"{pos} -> {words_str}")
 
         return "\n".join(rules)
-
-    def get_rules(self) -> str:
-        """
-        Возвращает полные правила грамматики
-        """
-        structural = self.get_structural_rules()
-        lexical = self._generate_lexical_rules()
-        return structural + "\n" + lexical
-
-    def to_cfg(self) -> CFG:
-        """
-        Преобразует правила в объект CFG
-        """
-        return CFG.fromstring(self.get_rules())

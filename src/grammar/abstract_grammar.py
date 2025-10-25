@@ -25,7 +25,8 @@ class AbstractGrammar(ABC):
                 word_pos_map[word] = pos
         return word_pos_map
 
-    def _map_pos_to_grammar_symbol(self, pos: str) -> str:
+    @staticmethod
+    def _map_pos_to_grammar_symbol(pos: str) -> str:
         """
         Преобразует POS-теги в символы грамматики
         """

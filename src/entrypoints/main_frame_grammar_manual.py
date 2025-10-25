@@ -1,8 +1,8 @@
 from entrypoints import text, dictionary
-from grammar.frame_grammar import FrameAbstractGrammar
-from pos.manual_pos_tagger import ManualPosTaggerInterface
+from grammar.frame_grammar import FrameGrammar
+from pos.manual_pos_tagger import ManualPosTagger
 from process import process_sentences
 
 if __name__ == "__main__":
-    pos_tagger = ManualPosTaggerInterface(dictionary)
-    process_sentences(text, pos_tagger, FrameAbstractGrammar)
+    pos_tagger = ManualPosTagger(dictionary)
+    process_sentences(text, pos_tagger, FrameGrammar)

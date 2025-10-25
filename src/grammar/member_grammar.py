@@ -1,7 +1,7 @@
 from grammar.abstract_grammar import AbstractGrammar
 
 
-class MemberAbstractGrammar(AbstractGrammar):
+class MemberGrammar(AbstractGrammar):
     def get_structural_rules(self) -> str:
         """
         Возвращает структурные правила по членам предложения

@@ -1,7 +1,7 @@
 from grammar.abstract_grammar import AbstractGrammar
 
 
-class FrameAbstractGrammar(AbstractGrammar):
+class FrameGrammar(AbstractGrammar):
     """
     Грамматика на основе ситуационных фреймов.
 

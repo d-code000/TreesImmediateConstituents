@@ -1,7 +1,7 @@
 from pos.pos_tagger_interface import PosTaggerInterface
 
 
-class ManualPosTaggerInterface(PosTaggerInterface):
+class ManualPosTagger(PosTaggerInterface):
     def __init__(self, dictionary: dict[str, str]):
         """
         :param dictionary: Заранее определенный словарь

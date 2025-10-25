@@ -1,4 +1,4 @@
-from grammar import Grammar
+from grammar.grammar import Grammar
 
 
 class MemberGrammar(Grammar):

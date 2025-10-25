@@ -1,4 +1,4 @@
-from pos_tagger import PosTagger
+from pos.pos_tagger import PosTagger
 
 
 class ManualPosTagger(PosTagger):

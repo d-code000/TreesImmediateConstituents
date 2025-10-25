@@ -1,6 +1,6 @@
 import pymorphy3
 
-from pos_tagger import PosTagger
+from pos.pos_tagger import PosTagger
 
 
 class MorphyPosTagger(PosTagger):

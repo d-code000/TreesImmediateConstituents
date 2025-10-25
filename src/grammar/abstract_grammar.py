@@ -4,7 +4,7 @@ from nltk import CFG
 from pos.pos_tagger import PosTagger
 
 
-class Grammar(ABC):
+class AbstractGrammar(ABC):
     def __init__(self, pos_tagger: PosTagger, tokens: list[str]):
         """
         :param pos_tagger: Теггер для определения частей речи

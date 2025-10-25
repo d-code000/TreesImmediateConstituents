@@ -9,8 +9,16 @@ class MemberGrammar(AbstractGrammar):
         return """
         S -> SubjectGroup PredicateGroup
 
-        SubjectGroup -> Subject | Attribute Subject | Subject Attribute
-        PredicateGroup -> Predicate | Manner Predicate | Predicate Object | Predicate Circumstance | Manner Predicate Object | Predicate Object Circumstance
+        SubjectGroup -> Subject 
+        SubjectGroup -> Attribute Subject 
+        SubjectGroup -> Subject Attribute
+
+        PredicateGroup -> Predicate 
+        PredicateGroup -> Manner Predicate 
+        PredicateGroup -> Predicate Object 
+        PredicateGroup -> Predicate Circumstance 
+        PredicateGroup -> Manner Predicate Object 
+        PredicateGroup -> Predicate Object Circumstance
 
         Subject -> N | PRON
         Predicate -> V

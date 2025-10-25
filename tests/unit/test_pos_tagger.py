@@ -1,10 +1,10 @@
 import pytest
-from pos.morphy_pos_tagger import MorphyPosTagger
-from pos.manual_pos_tagger import ManualPosTagger
+from pos.morphy_pos_tagger import MorphyPosTaggerInterface
+from pos.manual_pos_tagger import ManualPosTaggerInterface
 
 @pytest.fixture(params=[
-    MorphyPosTagger(),
-    ManualPosTagger({
+    MorphyPosTaggerInterface(),
+    ManualPosTaggerInterface({
         "кот": "NOUN",
         "бежит": "VERB",
         "быстро": "ADVB",

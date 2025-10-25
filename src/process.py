@@ -1,10 +1,10 @@
 from nltk.parse import ChartParser
 
-from pos.pos_tagger import PosTagger
+from pos.pos_tagger_interface import PosTaggerInterface
 from sentence_parser import SentenceParser
 
 
-def process_sentences(text: str, pos_tagger: PosTagger, grammar_class):
+def process_sentences(text: str, pos_tagger: PosTaggerInterface, grammar_class):
     """
     Обрабатывает несколько предложений
 

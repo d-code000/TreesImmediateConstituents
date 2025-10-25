@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 from nltk import CFG
 
-from pos.pos_tagger import PosTagger
+from pos.pos_tagger_interface import PosTaggerInterface
 
 
 class AbstractGrammar(ABC):
-    def __init__(self, pos_tagger: PosTagger, tokens: list[str]):
+    def __init__(self, pos_tagger: PosTaggerInterface, tokens: list[str]):
         """
         :param pos_tagger: Теггер для определения частей речи
         :param tokens: Токенизированное предложение (список слов)
